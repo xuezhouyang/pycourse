@@ -1,42 +1,32 @@
 #纯数字
-withoutDollar = 9527
-print(withoutDollar)
+numeric = 9527
 
-#数字不可用直接与字符串连接
-withOperator = '$' + str(withoutDollar)
-print(withOperator)
-
+#字符串与数字连接
+string = '$' + str(numeric)
 
 #重复三次
 print(withOperator * 3)
 
-#整形于浮点
-floatDemo = 9888.8888
-print(floatDemo + withoutDollar)
-
+#多行
 multiLine = "竟然是这样的P" \
             "y代码"
-print(multiLine)
 
-#比PHP弱爆了的字符串
-multiBlock = '''
-这事啥东西你信么？
+multiLine = '''
+这你信么？
 多行竟然长这样
 强大的php只需要"
-    还记的php
+    还记得php
     强大的字符
     串么
 "
 '''
-print(multiBlock)
 
 #使用动态变量
-shadowMultiBlock = 'multiBlock'
+shadowMultiBlock = 'multiBlock' #dddd
 print(locals()[shadowMultiBlock])
 
-
 #使用变量
-shadowMultiBlockLenght = len(shadowMultiBlock)
+mstring = len(locals()[string])
 for i in range(0, shadowMultiBlockLenght):
     print(shadowMultiBlock[i])
 
@@ -44,10 +34,6 @@ for i in range(0, shadowMultiBlockLenght):
 sharingan = ['list', 'detail', 'gogoing']
 sharinganCopy = sharingan
 sharingan += [111]
-print(sharingan)
-print(sharinganCopy)
-print(id(sharingan))
-print(id(sharinganCopy))
 
 #列表使用 值复制
 sharingan = ['list', 'detail', 'gogoing']
@@ -65,6 +51,9 @@ print(shadow)
 for i in shadow:
     print(i, id(i))
 
+exit()
+
+
 #dict
 shadow = {'hello': 'shinagawa', 'world': 'tokyo'}
 #i为键
@@ -72,8 +61,10 @@ for i in shadow:
     print(i, id(i), shadow[i])
 print(shadow)
 
+exit()
+
 #定义函数
-def originClosure(formal_parameter):
+def closure(formal_parameter):
     print(formal_parameter)
     return 'return_result'
 
@@ -81,6 +72,8 @@ def originClosure(formal_parameter):
 params = []
 result = eval('originClosure')('formal_parameter')
 print(result)
+
+exit()
 
 #Class
 class DemoClass:
@@ -91,7 +84,5 @@ class DemoClass:
 
     def echo(self, params):
         self.__private_echo(params)
-
-
 demo = DemoClass()
 demo.echo('newobject')
